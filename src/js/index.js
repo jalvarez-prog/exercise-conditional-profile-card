@@ -10,14 +10,17 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   if (variables.name == null) variables.name = "Jorge";
+  if (variables.lastname == null) variables.lastname = "Alvarez";
+  if (variables.role == null) variables.role = "Architect";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-         <h1>${variables.name}</h1>
+         <h1>${variables.name}</h1> 
+         <h1>${variables.lastname}</h1>
           <h2>${variables.role}</h2>
-          <h3>${variables.name}</h3>
+          
           <ul class="position-right">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>

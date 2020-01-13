@@ -98,7 +98,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);", ""]);
 
 // module
-exports.push([module.i, ".filters {\n  background: white;\n  width: 100%; }\n  .filters li {\n    display: inline-block;\n    max-width: 80px;\n    padding: 3px; }\n    .filters li label {\n      display: block;\n      font-size: 12px;\n      font-weight: 900; }\n    .filters li input {\n      width: 100%; }\n    .filters li select {\n      width: 100%; }\n\n.widget {\n  position: relative;\n  width: 300px;\n  height: 350px;\n  margin: 50px auto;\n  background: #fff;\n  border-radius: 5px;\n  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); }\n  .widget .cover {\n    height: 160px;\n    overflow: hidden; }\n    .widget .cover img {\n      width: 100%;\n      height: auto;\n      min-height: 160px;\n      border-radius: 4px 4px 0 0; }\n  .widget .photo {\n    position: absolute;\n    top: 85px;\n    left: 50%;\n    width: 100px;\n    height: 100px;\n    margin: 0 0 0 -55px;\n    border: 5px solid #fff;\n    border-radius: 50%; }\n  .widget h1,\n  .widget h2,\n  .widget h3 {\n    display: block;\n    margin: 10px 0;\n    text-align: center;\n    font-family: \"Open Sans\", sans-serif;\n    font-size: 16px;\n    font-weight: 300;\n    color: #999; }\n  .widget h1 {\n    margin: 60px 0 20px;\n    font-size: 26px;\n    color: #000; }\n  .widget h3 {\n    font-size: 12px; }\n  .widget ul {\n    position: absolute;\n    top: 20px;\n    padding: 0;\n    background: #2cdfd3; }\n    .widget ul.position-left {\n      left: -26px; }\n    .widget ul.position-right {\n      right: -27px; }\n    .widget ul li {\n      list-style: none; }\n      .widget ul li a {\n        display: block;\n        padding: 5px 6px;\n        color: #fff;\n        cursor: pointer;\n        text-align: center;\n        border-bottom: 1px solid #2cd5ca;\n        transition: background-color 0.3s; }\n      .widget ul li:hover > a {\n        background-color: #2cd5ca; }\n      .widget ul li:first-child > a {\n        border-radius: 0 3px 0 0; }\n      .widget ul li:last-child > a {\n        border: none;\n        border-radius: 0 0 3px 0; }\n", ""]);
+exports.push([module.i, ".filters {\n  background: white;\n  width: 100%; }\n  .filters li {\n    display: inline-block;\n    max-width: 80px;\n    padding: 3px; }\n    .filters li label {\n      display: block;\n      font-size: 12px;\n      font-weight: 900; }\n    .filters li input {\n      width: 100%; }\n    .filters li select {\n      width: 100%; }\n\n.widget {\n  position: relative;\n  width: 400px;\n  height: 450px;\n  margin: 50px auto;\n  background: #fff;\n  border-radius: 5px;\n  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); }\n  .widget .cover {\n    height: 160px;\n    overflow: hidden; }\n    .widget .cover img {\n      width: 100%;\n      height: auto;\n      min-height: 160px;\n      border-radius: 4px 4px 0 0; }\n  .widget .photo {\n    position: absolute;\n    top: 85px;\n    left: 50%;\n    width: 100px;\n    height: 100px;\n    margin: 0 0 0 -55px;\n    border: 5px solid #fff;\n    border-radius: 50%; }\n  .widget h1,\n  .widget h2,\n  .widget h3 {\n    display: block;\n    margin: 10px 0;\n    text-align: center;\n    font-family: \"Open Sans\", sans-serif;\n    font-size: 16px;\n    font-weight: 300;\n    color: #999; }\n  .widget h1 {\n    margin: 60px 0 20px;\n    font-size: 26px;\n    color: #000; }\n  .widget h3 {\n    font-size: 12px; }\n  .widget ul {\n    position: absolute;\n    top: 20px;\n    padding: 0;\n    background: #2cdfd3; }\n    .widget ul.position-left {\n      left: -26px; }\n    .widget ul.position-right {\n      right: -27px; }\n    .widget ul li {\n      list-style: none; }\n      .widget ul li a {\n        display: block;\n        padding: 5px 6px;\n        color: #fff;\n        cursor: pointer;\n        text-align: center;\n        border-bottom: 1px solid #2cd5ca;\n        transition: background-color 0.3s; }\n      .widget ul li:hover > a {\n        background-color: #2cd5ca; }\n      .widget ul li:first-child > a {\n        border-radius: 0 3px 0 0; }\n      .widget ul li:last-child > a {\n        border: none;\n        border-radius: 0 0 3px 0; }\n", ""]);
 
 // exports
 
@@ -706,14 +706,17 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   if (variables.name == null) variables.name = "Jorge";
+  if (variables.lastname == null) variables.lastname = "Alvarez";
+  if (variables.role == null) variables.role = "Architect";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-         <h1>${variables.name}</h1>
+         <h1>${variables.name}</h1> 
+         <h1>${variables.lastname}</h1>
           <h2>${variables.role}</h2>
-          <h3>${variables.name}</h3>
+          
           <ul class="position-right">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
